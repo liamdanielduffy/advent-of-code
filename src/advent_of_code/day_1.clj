@@ -1,6 +1,5 @@
 (ns advent-of-code.day-1
-  (:require [advent-of-code.puzzle-inputs :as inputs]
-            [clojure.string :as s]))
+  (:require [clojure.string :as s]))
 
 (def pt1-strings-to-numbers
   {"1" 1
@@ -32,10 +31,6 @@
    "8" 8
    "nine" 9
    "9" 9})
-
-;; get a vector of the input lines
-
-(defn split-on-newlines [s] (clojure.string/split s #"\n"))
 
 ;; get substrings from each index in the string - 0,1,2,3...
 
