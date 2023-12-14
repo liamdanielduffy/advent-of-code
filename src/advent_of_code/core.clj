@@ -17,4 +17,6 @@
 ;; work in progress!
 (def day2-answer (->> inputs/day2
                       (utils/split-on-newlines)
-                      (map d2/get-color-num-tuples)))
+                      (d2/remove-impossible-games { "red" 12 "blue" 14 "green" 13})
+                      (map d2/get-game-id)
+                      (apply +)))
