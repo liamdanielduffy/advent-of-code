@@ -4,6 +4,7 @@
 
 (def num-cubes-regex #"\d{1,2} (blue|red|green)")
 
+(def max-cubes-by-color { "red" 12 "blue" 14 "green" 13})
 
 ;;cube-samples are all tuples of [color, num-marbles] listed in a game
 (defn get-cube-samples [input-line] (->> input-line

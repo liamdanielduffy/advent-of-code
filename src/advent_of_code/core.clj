@@ -17,6 +17,6 @@
 ;; work in progress!
 (def day2-answer (->> inputs/day2
                       (utils/split-on-newlines)
-                      (d2/remove-impossible-games { "red" 12 "blue" 14 "green" 13})
+                      (d2/remove-impossible-games d2/max-cubes-by-color)
                       (map d2/get-game-id)
                       (apply +)))
