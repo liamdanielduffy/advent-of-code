@@ -4,6 +4,8 @@
             [advent-of-code.utils :as utils]
             [advent-of-code.inputs :as inputs]))
 
+;; DAY 1
+
 (def day1-part1-answer (->> inputs/day1
                             (utils/split-on-newlines)
                             (map d1/get-calibration-value-pt1)
@@ -14,9 +16,17 @@
                             (map d1/get-calibration-value-pt2)
                             (apply +)))
 
-;; work in progress!
-(def day2-answer (->> inputs/day2
-                      (utils/split-on-newlines)
-                      (d2/remove-impossible-games d2/max-cubes-by-color)
-                      (map d2/get-game-id)
-                      (apply +)))
+;; DAY 2
+
+(def day2-part1-answer (->> inputs/day2
+                            (utils/split-on-newlines)
+                            (d2/remove-impossible-games)
+                            (map d2/get-game-id)
+                            (apply +)))
+
+(def day2-part2-answer (->> inputs/day2
+                            (utils/split-on-newlines)
+                            (map d2/get-cube-samples)
+                            (map d2/get-max-cubes-of-each-color)
+                            (map d2/multiply-max-cubes)
+                            (apply +)))
